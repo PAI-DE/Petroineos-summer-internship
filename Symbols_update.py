@@ -17,7 +17,7 @@ class SymbolsUpdate:
             data['country'] = data['isin'].apply(lambda x: country_codes.get(x[:2], x[:2]))
 
             if 'updatedby' not in data.columns:
-                data['updatedby'] = 'petroineos_pai'
+                data['updatedby'] = 'petroineos'
 
             data = data.melt(id_vars=['symbol', 'hold', 'country', 'updatedby'],
                              var_name='item', value_name='item_value')
